@@ -58,7 +58,7 @@ Sprint 2's full Context-Driven Form Engine is outside the mandatory scope of thi
 - git diff --check
 - git diff --cached
 
-**Status:** IN PROGRESS
+**Status:** DONE
 
 **Suggested Commit:**
 docs(ex1.3): establish project rules and task plan
@@ -97,7 +97,24 @@ docs(ex1.3): establish project rules and task plan
 - Examine browser Console.
 - Record only verified findings.
 
-**Status:** TODO
+### Observed Baseline Findings
+
+The legacy validation implementation intentionally contains five chained useEffect hooks across InputField and SimpleForm.
+
+Running ESLint reported four errors under the react-hooks/set-state-in-effect rule:
+
+1. InputField.jsx: setDisplayError(error)
+2. SimpleForm.jsx: setIsEmailValid(valid)
+3. SimpleForm.jsx: setIsFormValid(isEmailValid)
+4. SimpleForm.jsx: setEmailError(...)
+
+These findings confirm that the baseline contains synchronous state updates inside effects.
+
+They do not independently prove that an infinite loop, race condition, or specific number of additional renders occurred.
+
+The validation architecture will be refactored in T03. ESLint is expected to report errors for the intentionally preserved legacy baseline.
+
+**Status:** DONE
 
 **Suggested Commit:**
 test(ex1.3): establish validation anti-pattern baseline
