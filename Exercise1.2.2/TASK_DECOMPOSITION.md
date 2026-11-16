@@ -270,7 +270,7 @@ To be verified before implementation.
 - Run configured checks.
 
 ### Status
-TODO
+DONE
 
 ### Suggested Git Commit Message
 `feat(ex1.2.2): implement person details and not-found state`
