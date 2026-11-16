@@ -141,7 +141,7 @@
 - Test browser back/forward.
 - Check Console for errors.
 
-**Status:** TODO
+**Status:** DONE
 
 **Suggested Git Commit Message:**
 `feat(ex1.2.1): implement nested routes and shared layout`

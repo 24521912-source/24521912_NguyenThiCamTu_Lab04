@@ -1,5 +1,11 @@
 
-import { Link, Outlet } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
+
+const navigationItems = [
+  { path: "/", label: "Home", end: true },
+  { path: "/about", label: "About" },
+  { path: "/contact", label: "Contact" },
+];
 
 export default function MainLayout() {
   return (
@@ -17,20 +23,26 @@ export default function MainLayout() {
       </header>
 
       <div className="layout-container">
-        <aside className="sidebar" aria-label="Page navigation">
+        <aside className="sidebar">
           <h2 className="sidebar-title">Navigation</h2>
 
           <nav aria-label="Main navigation">
             <ul className="navigation-list">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
+              {navigationItems.map((item) => (
+                <li key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    end={item.end}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "navigation-link navigation-link--active"
+                        : "navigation-link"
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </nav>
         </aside>
