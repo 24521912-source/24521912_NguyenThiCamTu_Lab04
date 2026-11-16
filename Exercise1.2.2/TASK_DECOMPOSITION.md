@@ -216,7 +216,7 @@ To be verified before implementation.
 - Run configured checks.
 
 ### Status
-TODO
+DONE
 
 ### Suggested Git Commit Message
 `feat(ex1.2.2): build responsive people master layout`
