@@ -56,13 +56,17 @@ export default function PeopleLayout() {
                     </span>
 
                     <span
-                      className={`status-dot ${
-                        person.status === "Active"
-                          ? "status-active"
-                          : "status-inactive"
-                      }`}
-                      aria-label={person.status}
-                    />
+  className={`status-dot ${
+    person.status === "Active"
+      ? "status-active"
+      : "status-inactive"
+  }`}
+  aria-hidden="true"
+/>
+
+<span className="visually-hidden">
+  {`Status: ${person.status}`}
+</span>
                   </NavLink>
                 </li>
               ))}
