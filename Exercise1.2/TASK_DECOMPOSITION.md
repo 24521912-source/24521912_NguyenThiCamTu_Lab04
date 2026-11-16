@@ -140,7 +140,7 @@ Configure React Router v7 and implement declarative routing with a valid default
 
 ## T03 — Nested People Layout & Active Navigation
 
-**Status:** TODO
+**Status:** DONE
 
 ### Objective
 
@@ -190,7 +190,7 @@ Create a reusable People layout with nested routes, a directory list, and active
 
 ## T04 — Person Detail, URL Parameters & Not-Found Handling
 
-**Status:** TODO
+**Status:** DONE
 
 ### Objective
 
@@ -241,7 +241,7 @@ Implement parameter-driven person details using React Router v7 and accessible s
 
 ## T05 — Responsive Master–Detail Grid & Accessibility
 
-**Status:** TODO
+**Status:** DONE
 
 ### Objective
 

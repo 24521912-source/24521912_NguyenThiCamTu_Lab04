@@ -1,75 +1,101 @@
-# React + TypeScript + Vite
+# People Directory — Lab 4 Exercise 1.2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project demonstrates declarative routing and nested layout architecture using React, TypeScript, Vite, and React Router v7.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application implements a responsive people directory with client-side navigation, dynamic profile routes, active navigation states, semantic profile information, and graceful handling of unknown person IDs.
 
-## React Compiler
+The project uses local demonstration data. It does not require a backend or database.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Course Scope
 
-## Expanding the ESLint configuration
+UIT Web Application Development 2026 — Lab 4
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Covered requirements:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Exercise 1.2 — Declarative Syntax Updates
+- Exercise 1.2.1 — React Router v7 Layout Architecture
+- Exercise 1.2.2 — Master–Detail Views with React Router and CSS Grid
+- Related Sprint 1 router layout and detail route requirements
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Exercise 1.3, Sprint 2, Sprint 3, backend development, and MongoDB are outside the project scope.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Technology Stack
 
+- React 19
+- TypeScript
+- Vite
+- React Router v7
+- CSS Grid and responsive CSS
+- npm
+- Git
+
+## Getting Started
+
+### Prerequisites
+
+Install a Node.js version compatible with the project's Vite version and ensure npm is available.
+
+### Install Dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Start the Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+Open the local URL displayed in the terminal.
+
+### Build the Application
+
+```bash
+npm run build
+```
+
+### Run Lint Checks
+
+```bash
+npm run lint
+```
+
+The commands above correspond to the scripts expected from the Vite React + TypeScript starter project. Confirm their availability in `package.json`.
+
+## Application Structure
+
+The main application is organized around the following components:
+
+| File | Responsibility |
+|---|---|
+| `src/main.tsx` | React application entry point and router context |
+| `src/App.tsx` | Declarative route definitions |
+| `src/components/PeopleLayout.tsx` | Shared people directory layout and navigation |
+| `src/components/PeopleIndex.tsx` | Default nested route content |
+| `src/components/PersonDetail.tsx` | Dynamic profile lookup and detail presentation |
+| `src/data/people.ts` | Local demonstration data |
+| `src/App.css` | Component styling and responsive layout |
+| `src/index.css` | Global application styles |
+
+## Routing Architecture
+
+The application uses React Router v7 in Declarative Mode.
+
+| Route | Expected Behavior |
+|---|---|
+| `/` | Redirects to `/people` |
+| `/people` | Displays the directory and index state |
+| `/people/:id` | Displays the matching person's profile |
+| `/people/:id` with an unknown ID | Displays a person-not-found state |
+| Unmatched application paths | Display a general 404 page |
+
+### Nested Layout
+
+`PeopleLayout` contains the shared directory navigation and an `<Outlet />` for nested route content.
+
+The shared layout remains mounted while the selected profile view changes.
+
+### Active
