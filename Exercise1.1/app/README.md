@@ -1,75 +1,99 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Lab 04 — Exercise 1.1
 
-Currently, two official plugins are available:
+## Performance & Resiliency Architectural Upgrades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A React application demonstrating component-level code
+splitting, accessible loading states, layout stability,
+and lazy-loading error handling.
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- TypeScript
+- Vite
+- CSS
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Lazy Loading
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The PersonDetail component is loaded dynamically using
+React.lazy() and import().
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+The component is requested when the user selects
+"View Details".
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Suspense Boundary
 
+React Suspense provides a fallback while the lazy
+component is loading.
+
+### Dimension-Matched Skeleton
+
+The loading skeleton follows the main structure of
+the PersonDetail component, including the avatar,
+profile information, and description.
+
+The layout is designed to reduce unexpected
+layout movement during loading.
+
+### Accessibility
+
+The loading interface uses meaningful ARIA semantics,
+including aria-busy and a polite loading announcement.
+
+The application also supports keyboard interaction,
+responsive layouts, and reduced-motion preferences.
+
+### Error Handling
+
+An Error Boundary provides an error message and a
+page reload option if the lazy component fails to load.
+
+## Installation
+
+Run the following commands in the app directory:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+Open the local URL displayed by Vite.
+
+## Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Verification
+
+The exercise includes manual verification of:
+
+- Dynamic JavaScript chunk loading
+- Suspense fallback behavior
+- Loading under network throttling
+- Layout stability and CLS inspection
+- Accessibility semantics
+- Keyboard navigation
+- Responsive behavior at 375px
+- Lazy chunk failure and recovery
+- Build and lint checks
+- Regression of existing functionality
+
+Performance scores must be based on actual measurements.
+No fixed CLS or Lighthouse result is assumed.
+
+## Exercise Scope
+
+This project implements Lab 04, Exercise 1.1 only.
+
+Later exercises and sprints are excluded.
