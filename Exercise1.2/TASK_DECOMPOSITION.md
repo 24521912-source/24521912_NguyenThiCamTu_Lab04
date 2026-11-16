@@ -25,7 +25,7 @@ Each task must be completed, verified, and committed before proceeding to the ne
 
 ## T01 — Repository Initialization & Task Decomposition
 
-**Status:** IN PROGRESS
+**Status:** DONE 
 
 ### Objective
 
@@ -91,7 +91,7 @@ Establish a clean, reproducible project foundation and document the development 
 
 ## T02 — React Router v7 Declarative Setup
 
-**Status:** TODO
+**Status:** DONE
 
 ### Objective
 
