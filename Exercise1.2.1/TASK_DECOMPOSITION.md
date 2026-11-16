@@ -101,7 +101,7 @@
 - Check browser Console.
 - Verify refresh behavior.
 
-**Status:** TODO
+**Status:** DONE
 
 **Suggested Git Commit Message:**
 `feat(ex1.2.1): configure declarative routing`
