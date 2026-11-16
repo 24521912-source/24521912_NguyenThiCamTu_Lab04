@@ -1,9 +1,17 @@
 
+import { useId } from 'react';
+
 export default function InputField({
   value,
   error,
   onValueChange,
 }) {
+  const generatedId = useId();
+
+  const inputId = `${generatedId}-input`;
+  const errorId = `${generatedId}-error`;
+  const hasError = Boolean(error);
+
   function handleChange(event) {
     onValueChange(event.target.value);
   }
@@ -12,21 +20,27 @@ export default function InputField({
 
   return (
     <div className="input-group">
-      <label htmlFor="email-input">
+      <label htmlFor={inputId}>
         Email address
       </label>
 
       <input
-        id="email-input"
+        id={inputId}
         type="email"
         value={value}
         onChange={handleChange}
         placeholder="Enter your email"
         autoComplete="email"
+        aria-invalid={hasError}
+        aria-describedby={hasError ? errorId : undefined}
       />
 
-      {error && (
-        <p className="error-message">
+      {hasError && (
+        <p
+          id={errorId}
+          className="error-message"
+          role="alert"
+        >
           {error}
         </p>
       )}

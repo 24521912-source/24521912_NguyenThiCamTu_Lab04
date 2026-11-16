@@ -153,7 +153,7 @@ test(ex1.3): establish validation anti-pattern baseline
 - Verify current values and error messages.
 - Run available lint and build scripts.
 
-**Status:** TODO
+**Status:** DONE
 
 **Suggested Commit:**
 refactor(ex1.3): derive validation synchronously
@@ -192,7 +192,7 @@ refactor(ex1.3): derive validation synchronously
 - Check accessibility-related warnings.
 - Run available project scripts.
 
-**Status:** TODO
+**Status:** DONE
 
 **Suggested Commit:**
 fix(ex1.3): improve accessible validation feedback
