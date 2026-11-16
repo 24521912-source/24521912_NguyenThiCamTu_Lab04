@@ -1,6 +1,7 @@
 
 import { lazy, Suspense, useState } from 'react'
 import type { Person } from './components/PersonDetail'
+import PersonDetailSkeleton from './components/PersonDetailSkeleton'
 import './App.css'
 
 const PersonDetail = lazy(() => import('./components/PersonDetail'))
@@ -74,15 +75,9 @@ function App() {
           aria-label="Person details"
         >
           {showDetails ? (
-            <Suspense
-              fallback={
-                <div className="temporary-loading" role="status">
-                  Loading person details...
-                </div>
-              }
-            >
-              <PersonDetail person={demoPerson} />
-            </Suspense>
+            <Suspense fallback={<PersonDetailSkeleton />}>
+  <PersonDetail person={demoPerson} />
+</Suspense>
           ) : (
             <div className="empty-state">
               <p>Choose View Details to load the profile.</p>

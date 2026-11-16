@@ -145,7 +145,7 @@ feat(ex1.1): add lazy loaded person detail
 
 ### Status
 
-TODO
+DONE
 
 ---
 
@@ -194,8 +194,7 @@ To be confirmed after T02.
 feat(ex1.1): add accessible suspense skeleton
 
 ### Status
-
-TODO
+DONE
 
 ---
 
