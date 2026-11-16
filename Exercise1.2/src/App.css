@@ -244,3 +244,182 @@
     align-self: flex-start;
   }
 }
+
+/* Person Detail */
+
+.person-detail {
+  width: 100%;
+  min-width: 0;
+  padding: 26px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.person-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-avatar {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #3730a3;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.detail-heading {
+  min-width: 0;
+  flex: 1;
+}
+
+.detail-eyebrow {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #64748b;
+}
+
+.detail-heading h2 {
+  margin: 0;
+  font-size: 24px;
+  overflow-wrap: anywhere;
+}
+
+.detail-role {
+  margin: 6px 0 0;
+  color: #64748b;
+}
+
+.detail-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.detail-status-active {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.detail-status-inactive {
+  color: #64748b;
+  background: #f1f5f9;
+}
+
+.person-information {
+  margin-top: 26px;
+}
+
+.person-information h3 {
+  margin-bottom: 18px;
+  font-size: 17px;
+}
+
+.person-definition-list {
+  margin: 0;
+}
+
+.person-definition-item {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) 2fr;
+  gap: 16px;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf0f2;
+}
+
+.person-definition-item dt {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.person-definition-item dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.person-definition-item a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.person-definition-item a:hover {
+  text-decoration: underline;
+}
+
+.person-definition-item a:focus-visible,
+.back-to-directory:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+
+.person-not-found {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.not-found-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.person-not-found h2 {
+  margin: 18px 0 8px;
+}
+
+.person-not-found p {
+  color: #64748b;
+  overflow-wrap: anywhere;
+}
+
+.back-to-directory {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .person-detail {
+    padding: 16px;
+  }
+
+  .person-detail-header {
+    flex-wrap: wrap;
+  }
+
+  .detail-heading h2 {
+    font-size: 20px;
+  }
+
+  .person-definition-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

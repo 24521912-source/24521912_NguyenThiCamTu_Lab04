@@ -2,7 +2,7 @@
 import { Navigate, Route, Routes } from "react-router";
 import PeopleLayout from "./components/PeopleLayout";
 import PeopleIndex from "./components/PeopleIndex";
-
+import PersonDetail from "./components/PersonDetail";
 function HomePage() {
   return <Navigate to="/people" replace />;
 }
@@ -23,8 +23,9 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
 
       <Route path="/people" element={<PeopleLayout />}>
-        <Route index element={<PeopleIndex />} />
-      </Route>
+  <Route index element={<PeopleIndex />} />
+  <Route path=":id" element={<PersonDetail />} />
+</Route>
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
