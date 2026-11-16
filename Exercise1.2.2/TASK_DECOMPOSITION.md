@@ -108,7 +108,7 @@ Inspect the repository and establish project documentation before implementing f
 - Confirm the commit using Git history.
 
 ### Status
-IN PROGRESS
+DONE
 
 ### Suggested Git Commit Message
 `docs(ex1.2.2): initialize project planning and audit structure`
@@ -159,7 +159,7 @@ To be verified from the existing repository before implementation.
 - Review Git changes.
 
 ### Status
-TODO
+DONE
 
 ### Suggested Git Commit Message
 `feat(ex1.2.2): integrate people data and detail routes`
