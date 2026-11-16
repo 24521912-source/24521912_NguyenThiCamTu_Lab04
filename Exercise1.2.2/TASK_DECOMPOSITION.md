@@ -387,7 +387,7 @@ Finalize documentation, review submission readiness, and prepare for oral defens
 - Check submission requirements.
 
 ### Status
-TODO
+DONE
 
 ### Suggested Git Commit Message
 `docs(ex1.2.2): finalize documentation and defense checklist`
