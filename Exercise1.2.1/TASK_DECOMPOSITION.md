@@ -182,7 +182,7 @@
 - Check layout at 375px.
 - Check Console for errors.
 
-**Status:** TODO
+**Status:** DONE
 
 **Suggested Git Commit Message:**
 `feat(ex1.2.1): add active navigation with NavLink`
@@ -228,7 +228,7 @@
 - Check layout at 375px.
 - Inspect Git history and working tree.
 
-**Status:** TODO
+**Status:** DONE
 
 **Suggested Git Commit Message:**
 `docs(ex1.2.1): complete regression and documentation`
