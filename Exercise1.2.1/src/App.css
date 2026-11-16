@@ -2,73 +2,155 @@
 #root {
   width: 100%;
   min-height: 100vh;
-  margin: 0 auto;
 }
 
-.app {
+.app-shell {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #17243b;
 }
 
-.app-header {
-  padding: 28px 24px;
-  background: #1e293b;
+.site-header {
+  background: #17243b;
   color: white;
-  text-align: center;
+  padding: 24px;
 }
 
-.app-header h2 {
-  margin: 0 0 8px;
+.header-content {
+  width: min(1100px, 100%);
+  margin: auto;
 }
 
-.app-header p {
-  margin: 0;
+.site-brand {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.site-subtitle {
   color: #cbd5e1;
+  margin: 8px 0 0;
 }
 
-.page {
-  max-width: 900px;
-  margin: 48px auto;
-  padding: 32px 24px;
+.layout-container {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 24px;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 32px 20px;
+  flex: 1;
+  box-sizing: border-box;
 }
 
-.page h1 {
-  color: #1e293b;
-  margin-bottom: 16px;
+.sidebar,
+.main-content {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  min-width: 0;
 }
 
-.page p {
+.sidebar-title {
+  font-size: 1rem;
+  margin: 0 0 20px;
+}
+
+.navigation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-list li + li {
+  margin-top: 12px;
+}
+
+.navigation-list a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #334155;
+  text-decoration: none;
+}
+
+.navigation-list a:hover {
+  background: #f1f5f9;
+}
+
+.page-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #2563eb;
+}
+
+.page-content h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin: 12px 0 16px;
+}
+
+.page-content p {
   color: #475569;
   line-height: 1.7;
 }
 
-.page-link {
+.info-panel {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+}
+
+.info-panel h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.action-link {
   display: inline-block;
-  margin-top: 16px;
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 12px 18px;
   background: #2563eb;
   color: white;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
 }
 
-.page-link:hover {
+.action-link:hover {
   background: #1d4ed8;
 }
 
-.page-link:focus-visible {
+a:focus-visible {
   outline: 3px solid #f59e0b;
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
-@media (max-width: 600px) {
-  .page {
-    margin: 24px auto;
-    padding: 24px 16px;
+.site-footer {
+  text-align: center;
+  background: #17243b;
+  color: #cbd5e1;
+  padding: 20px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 650px) {
+  .layout-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 16px;
   }
 
-  .app-header {
-    padding: 24px 16px;
+  .sidebar,
+  .main-content {
+    padding: 20px;
   }
 }
