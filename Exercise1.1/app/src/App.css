@@ -388,3 +388,28 @@ button {
     transition: none;
   }
 }
+
+/* T04 — Lazy loading error fallback */
+
+.detail-error {
+  padding: 28px;
+  border: 1px solid #f2c7c7;
+  border-radius: 16px;
+  background: #fff7f7;
+  color: #752b2b;
+}
+
+.detail-error h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.detail-error p {
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+
+.detail-error .details-button {
+  min-height: 44px;
+}

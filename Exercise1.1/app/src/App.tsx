@@ -3,6 +3,7 @@ import { lazy, Suspense, useState } from 'react'
 import type { Person } from './components/PersonDetail'
 import PersonDetailSkeleton from './components/PersonDetailSkeleton'
 import './App.css'
+import LazyLoadErrorBoundary from './components/LazyLoadErrorBoundary'
 
 const PersonDetail = lazy(() => import('./components/PersonDetail'))
 
@@ -75,9 +76,11 @@ function App() {
           aria-label="Person details"
         >
           {showDetails ? (
-            <Suspense fallback={<PersonDetailSkeleton />}>
-  <PersonDetail person={demoPerson} />
-</Suspense>
+            <LazyLoadErrorBoundary>
+  <Suspense fallback={<PersonDetailSkeleton />}>
+    <PersonDetail person={demoPerson} />
+  </Suspense>
+</LazyLoadErrorBoundary>
           ) : (
             <div className="empty-state">
               <p>Choose View Details to load the profile.</p>
